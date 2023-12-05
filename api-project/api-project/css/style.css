@@ -1,3 +1,39 @@
 body {
     background-color: rgb(235, 232, 227);
 }
+
+.center-text {
+    text-align: center;
+    align-items: center;
+}
+
+.div {
+    background-color: #FFFF;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    border-radius: 50px;
+}
+
+.button {
+    height: 30px;
+    width: 100px;
+    border-radius: 30px;
+    background-color: #FFFF;
+}
+
+.button2 {
+    height: 30px;
+    width: 100px;
+    border-radius: 30px;
+    background-color: #FFFF;
+    margin-left: 90%;
+    margin-bottom: 1%;
+}
+
+:root {
+    --beige: #rgb(235, 232, 227);
+}
+
+.normal {
+    --primary: var(--beige)
+}

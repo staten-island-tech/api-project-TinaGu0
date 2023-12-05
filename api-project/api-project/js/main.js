@@ -1,27 +1,19 @@
 import "../css/style.css"
+import "./profiles"
+import "./themes"
 
 
-const URL = `https://api.quotable.io/random`;
-
+const URL = `https://corsproxy.io/?https://www.nijisanji.jp/_next/data/qn3MdhaKNyN63H2JwZiWb/ja/talents.json`;
 async function getData(URL){
     try {
-        //requesting a response REST API's 
         const response = await fetch(URL); 
-        if(response.status != 200) {
-            throw new Error(response.statusText);
-        }
-        console.log(error, ":(");
-        //convert response to json 
         const data = await response.json()
-        console.log(response); 
-        document.querySelector("h1").textContent = data.content;
+        console.log(data); 
     } catch (error) {
         
     }
 }
  getData(URL); 
-
-
 
 
 console.log("hi")
