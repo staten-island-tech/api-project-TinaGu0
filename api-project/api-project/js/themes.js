@@ -1,3 +1,4 @@
+import "../css/style.css"
 
 document.querySelector("#switchTheme").addEventListener("click", function() {
     if (document.body.classList.contains("normal")) {
@@ -8,5 +9,4 @@ document.querySelector("#switchTheme").addEventListener("click", function() {
         document.body.classList.add("normal");
         document.body.classList.remove("imPomu");
     }
-    
 });

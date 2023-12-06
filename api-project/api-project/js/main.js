@@ -1,19 +1,27 @@
 import "../css/style.css"
-import "./profiles"
 import "./themes"
+import "./niji"
 
 
-const URL = `https://corsproxy.io/?https://www.nijisanji.jp/_next/data/qn3MdhaKNyN63H2JwZiWb/ja/talents.json`;
-async function getData(URL){
-    try {
-        const response = await fetch(URL); 
-        const data = await response.json()
-        console.log(data); 
-    } catch (error) {
-        
-    }
+
+const DOMSelectors = {
+    profiles: document.querySelector(".profiles")
 }
- getData(URL); 
+ 
+function cards(arr) {
+    arr.forEach((allLivers) => DOMSelectors.profiles.insertAdjacentHTML("beforeend", 
+`
+    <div class="profile">
+        <h2>${allLivers.name}</h2>    
+        <h3>${allLivers.enName}</h3>
+        <h3>${genshinCharacters.vision}</h3>
+        <img src="${allLivers.head}" />
+        <h3>${allLivers.subscriberCount}</h3>
+    </div>
+`
+))};
+
+cards(URL)  
 
 
-console.log("hi")
+

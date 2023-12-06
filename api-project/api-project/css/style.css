@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(235, 232, 227);
+    background-color: var(--primary);
 }
 
 .center-text {
@@ -12,6 +12,7 @@ body {
     padding-top: 3%;
     padding-bottom: 3%;
     border-radius: 50px;
+    background-color: var(--secondary);
 }
 
 .button {
@@ -31,9 +32,22 @@ body {
 }
 
 :root {
-    --beige: #rgb(235, 232, 227);
+    --beige: #ece6e3;
+    --teal: #44b0ab;
+    --white: #FFF;
+    --yellow: #fbf2c8;
+
+    --primary: var(--beige);
+    --secondary: var(--white);
+
 }
 
 .normal {
-    --primary: var(--beige)
+    --primary: var(--beige);
+    --secondary: var(--white);
+}
+
+.imPomu {
+    --primary: var(--teal);
+    --secondary: var(--yellow);
 }
