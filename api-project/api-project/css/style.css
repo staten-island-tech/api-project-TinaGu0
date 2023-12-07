@@ -5,6 +5,13 @@ body {
 .center-text {
     text-align: center;
     align-items: center;
+    color: var(--tertiary);
+}
+
+.center-items {
+    text-align: center;
+    align-content: center;
+    color: var(--tertiary);
 }
 
 .div {
@@ -19,16 +26,24 @@ body {
     height: 30px;
     width: 100px;
     border-radius: 30px;
-    background-color: #FFFF;
+    background-color: var(--secondary);
+    color: var(--tertiary);
 }
+
+.button:hover, .button2:hover {
+    transform: scale(1.1); 
+    transition: 1s;
+    background-color: #cecaca;
+  } 
 
 .button2 {
     height: 30px;
     width: 100px;
     border-radius: 30px;
-    background-color: #FFFF;
+    background-color: var(--secondary);
     margin-left: 90%;
     margin-bottom: 1%;
+    color: var(--tertiary);
 }
 
 :root {
@@ -36,18 +51,42 @@ body {
     --teal: #44b0ab;
     --white: #FFF;
     --yellow: #fbf2c8;
+    --black: #000;
+    --cyan: #1f606f;
 
     --primary: var(--beige);
     --secondary: var(--white);
+    --tertiary: var(--black);
 
 }
 
 .normal {
     --primary: var(--beige);
     --secondary: var(--white);
+    --tertiary: var(--black);
 }
 
 .imPomu {
     --primary: var(--teal);
     --secondary: var(--yellow);
+    --tertiary: var(--cyan);
 }
+
+.profile {
+    height: auto;
+    width: 20%;
+    justify-content: space-between;
+    text-align: center;
+    display: flexbox;
+    background-color: var(--secondary);
+    box-shadow: 0 10px 10px #fff;
+    margin-top: 5%;
+    margin-right: 5%;
+  }
+
+  .profiles {
+    display: flex;
+    width: 100%;
+    flex-flow: row wrap;
+    padding-top: 5%;
+  }

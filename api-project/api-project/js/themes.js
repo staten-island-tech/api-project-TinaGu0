@@ -9,4 +9,5 @@ document.querySelector("#switchTheme").addEventListener("click", function() {
         document.body.classList.add("normal");
         document.body.classList.remove("imPomu");
     }
+    window.open("https://impomu.com/");
 });
