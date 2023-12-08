@@ -9,6 +9,7 @@ const DOMSelectors = {
 }
  
 function cards(arr) {
+    const data = require("./niji")
     arr.forEach((allLivers) => DOMSelectors.profiles.insertAdjacentHTML("beforeend", 
 `
     <div class="profile">

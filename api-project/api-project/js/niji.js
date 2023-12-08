@@ -6,9 +6,12 @@ async function getData(URL){
         const response = await fetch(URL); 
         const data = await response.json()
         console.log(data); 
-        console.log(data.pageProps.allLivers); 
+        data.pageProps.allLivers.forEach((livers) => { console.log(livers) 
+        });
+        module.exports = {data};
     } catch (error) {
         
     }
-};
+}
  getData(URL); 
+
