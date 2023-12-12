@@ -19,18 +19,18 @@ async function getData(URL){
         data.pageProps.allLivers.forEach((livers) => { console.log(livers)});
 
         function cards(arr) {
-            arr.forEach((data) => DOMSelectors.profiles.insertAdjacentHTML("beforeend", 
+            arr.forEach((livers) => DOMSelectors.profiles.insertAdjacentHTML("beforeend", 
         `
             <div class="profile">
-                <h2>${data.pageProps.allLivers.name}</h2>    
-                <h3>${data.pageProps.allLivers.enName}</h3>
-                <h3>${data.pageProps.allLivers.name}</h3>
-    /*           <img src="${data.pageProps.allLivers.images.head}" /> */
-                <h3>${data.pageProps.allLivers.subscriberCount}</h3>
+                <h2>${data.pageProps}</h2>    
+                <h3>${data.pageProps}</h3>
+                <h3>${data.pageProps}</h3>
+                <img src="${data.pageProps}" />
+                <h3>${data.pageProps}</h3>
             </div>
         `
         ))};
-        cards(ee);
+        cards(data.pageProps.allLivers);
 
     } catch (error) {
         
@@ -38,6 +38,5 @@ async function getData(URL){
 };
 
  getData(URL); 
-
 
 
