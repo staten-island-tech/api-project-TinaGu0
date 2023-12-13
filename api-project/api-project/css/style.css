@@ -84,9 +84,14 @@ body {
     margin-right: 5%;
   }
 
+  .img {
+    width: 15vw;
+  }
+
   .profiles {
     display: flex;
     width: 100%;
     flex-flow: row wrap;
     padding-top: 5%;
   }
+
