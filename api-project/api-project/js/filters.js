@@ -1,9 +1,9 @@
 
 const DOMSelectors = {
     profiles: document.querySelector(".profiles"),
-    affiliationButtons: document.querySelector("#meow"),
+    affill: document.querySelectorAll("#meow"),
     subButtons: document.querySelector("#woof"),
-}
+};
 
 
 const URL = `https://corsproxy.io/?https://www.nijisanji.jp/_next/data/qn3MdhaKNyN63H2JwZiWb/ja/talents.json`;
@@ -30,6 +30,16 @@ async function getData(URL){
         ))};
         cards(data.pageProps.allLivers);
 
+        
+        DOMSelectors.affill.forEach((btn)=> btn.addEventListener("click", function(){
+            let arrays = btn.textContent
+            let newArr = data.pageProps.allLivers.filter((pp)=> pp.profile.affiliation === arrays)
+            remove();
+            cards(newArr);
+            console.log(newArr);
+        }));
+
+
     } catch (error) {
         
     }
@@ -42,14 +52,6 @@ async function getData(URL){
     const div = document.querySelectorAll(".profile");
     div.forEach((bye)=> bye.remove());
 };
-
-
-DOMSelectors.affiliationButtons.forEach((btn)=> btn.addEventListener("click", function(){
-    let arrays = btn.textContent
-    let newArr = genshinCharacters.filter((genshinCharacters)=>genshinCharacters.region === arrays)
-    remove();
-    charas(newArr);
-}));
 
 
 
