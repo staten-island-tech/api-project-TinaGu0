@@ -1,8 +1,9 @@
 
 const DOMSelectors = {
     profiles: document.querySelector(".profiles"),
-    affill: document.querySelectorAll("#meow"),
-    subButtons: document.querySelector("#woof"),
+    meow: document.querySelectorAll("#meow"),
+    woof: document.querySelector("#woof"),
+    everybody: document.querySelector("#everybody"),
 };
 
 
@@ -29,14 +30,17 @@ async function getData(URL){
         `
         ))};
         cards(data.pageProps.allLivers);
-
         
-        DOMSelectors.affill.forEach((btn)=> btn.addEventListener("click", function(){
+        DOMSelectors.meow.forEach((btn)=> btn.addEventListener("click", function(){
             let arrays = btn.textContent
-            let newArr = data.pageProps.allLivers.filter((pp)=> pp.profile.affiliation === arrays)
+            let newArr = data.pageProps.allLivers.filter((pp)=> pp.profile.affiliation.includes(arrays))
             remove();
             cards(newArr);
-            console.log(newArr);
+        }));
+
+        DOMSelectors.everybody.forEach((everybody)=> everybody.addEventListener("click", function() {
+            remove();
+            cards(data.pageProps.allLivers);
         }));
 
 

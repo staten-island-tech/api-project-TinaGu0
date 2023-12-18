@@ -31,9 +31,7 @@ body {
 }
 
 .button:hover, .button2:hover {
-    transform: scale(1.1); 
-    transition: 1s;
-    background-color: #cecaca;
+    background-color: var(--primary);
   } 
 
 .button2 {
