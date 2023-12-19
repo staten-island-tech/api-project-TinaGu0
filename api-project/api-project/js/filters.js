@@ -2,8 +2,8 @@
 const DOMSelectors = {
     profiles: document.querySelector(".profiles"),
     meow: document.querySelectorAll("#meow"),
-    woof: document.querySelector("#woof"),
-    everybody: document.querySelector("#everybody"),
+    woof: document.querySelectorAll("#woof"),
+    everybody: document.querySelectorAll("#everybody"),
 };
 
 
@@ -41,6 +41,13 @@ async function getData(URL){
         DOMSelectors.everybody.forEach((everybody)=> everybody.addEventListener("click", function() {
             remove();
             cards(data.pageProps.allLivers);
+        }));
+
+        DOMSelectors.woof.forEach((btn)=> btn.addEventListener("click", function(){
+            let subNumber = btn.textContent
+            let ochenDa = data.pageProps.allLivers.filter((pp)=> pp.subscriberCount > subNumber)
+            remove();
+            cards(ochenDa);
         }));
 
 

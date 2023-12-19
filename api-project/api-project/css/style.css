@@ -72,7 +72,7 @@ body {
 
 .profile {
     height: auto;
-    width: 20%;
+    width: 13%;
     justify-content: space-between;
     text-align: center;
     display: flexbox;
@@ -83,13 +83,30 @@ body {
   }
 
   .img {
-    width: 15vw;
+    width: 10vw;
   }
 
   .profiles {
     display: flex;
-    width: 100%;
+    width: 117%;
     flex-flow: row wrap;
     padding-top: 5%;
   }
 
+.profile:hover {
+    scale: 1.2;
+    transition: 0.3s;
+}
+
+body:hover .profile {
+    opacity: 0.5;
+    filter: blur(5px);
+    animation-play-state: paused;
+}
+
+
+body .profile:hover {
+    opacity: 1;
+    filter:blur(0px);
+    animation-play-state: running;
+}
