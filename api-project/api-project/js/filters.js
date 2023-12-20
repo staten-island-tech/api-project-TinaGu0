@@ -4,6 +4,8 @@ const DOMSelectors = {
     meow: document.querySelectorAll("#meow"),
     woof: document.querySelectorAll("#woof"),
     everybody: document.querySelectorAll("#everybody"),
+    search: document.getElementById("search"),
+    form: document.querySelectorAll(`#form`),
 };
 
 
@@ -20,13 +22,13 @@ async function getData(URL){
         function cards(arr) {
             arr.forEach((livers) => DOMSelectors.profiles.insertAdjacentHTML("beforeend", 
         `
-            <div class="profile">
-                <h2>${livers.enName}</h2>    
-                <h3>${livers.name}</h3>
-                <h3>Subscribers: ${livers.subscriberCount}</h3>
-                <img src="${link}${livers.images.head.url}" class="img"/>
-                <h3>${livers.profile.affiliation}</h3>
-            </div>
+                <div class="profile">
+                    <h2>${livers.enName}</h2>    
+                    <h3>${livers.name}</h3>
+                    <h3>Subscribers: ${livers.subscriberCount}</h3>
+                    <img src="${link}${livers.images.head.url}" class="img"/>
+                    <h3>${livers.profile.affiliation}</h3>
+                </div>
         `
         ))};
         cards(data.pageProps.allLivers);
@@ -49,6 +51,16 @@ async function getData(URL){
             remove();
             cards(ochenDa);
         }));
+
+        DOMSelectors.form.addEventListener("click", function (event) {
+            event.preventDefault();
+            remove();
+            let search = DOMSelectors.search.value
+            console.log(search);
+            let arr2 = data.pageProps.allLivers.filter((pp)=> pp.enName === search)
+            cards(arr2);
+
+          });
 
 
     } catch (error) {

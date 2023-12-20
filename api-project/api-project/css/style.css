@@ -98,15 +98,6 @@ body {
     transition: 0.3s;
 }
 
-body:hover .profile {
-    opacity: 0.5;
-    filter: blur(5px);
-    animation-play-state: paused;
-}
-
-
-body .profile:hover {
-    opacity: 1;
-    filter:blur(0px);
-    animation-play-state: running;
+.srch {
+    margin-left: 83%;
 }
