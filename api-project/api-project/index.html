@@ -7,36 +7,39 @@
     <title>API Proj</title>
   </head>
   <body class="normal">
-    <div>
-      <input type="submit" value="I'm Pomu" id="switchTheme" class="button2"/>
-    </div>
-    <div class="div">
-      <h1 class="center-text">Nijisanji Members</h1>
-    </div>
-    <div class="center-items">
-      <h4></h4>
-      <button class="button" id="everybody">All Members</button>
-    </div>
-    <div class="center-items">
-      <h3>Affiliation</h3>
-      <button class="button" id="meow">にじさんじ</button>
-      <button class="button"  id="meow">NIJISANJI EN</button>
-      <button class="button"  id="meow">VirtuaReal</button>
-    </div>
-    <div class="center-items">
-      <h3>Subscriber Count</h3>
-      <button class="button" id="woof">100000</button>
-      <button class="button" id="woof">500000</button>
-      <button class="button" id="woof">1000000</button>
-    </div>
-    <div class="srch">
-      <h4>Search Member By Name</h4><h5>(ex. Vox Akuma)</h5>
-      <form id="form">
-        <input src="text" id="search"/>
-        <input type="button" value="Enter"/>
-      </form>
-    </div>
-    
+    <section class="section1">
+      <div>
+        <input type="submit" value="I'm Pomu" id="switchTheme" class="button2"/>
+      </div>
+        <h1 class="center-text">Nijisanji Members</h1>
+    </section>
+  <section>
+      <div class="center-items">
+        <h4></h4>
+        <button class="button" id="everybody">All Members</button>
+      </div>
+      <div class="center-items">
+        <h3>Affiliation</h3>
+        <button class="button" id="meow">にじさんじ</button>
+        <button class="button"  id="meow">NIJISANJI EN</button>
+        <button class="button"  id="meow">VirtuaReal</button>
+      </div>
+    </section>
+      <div class="center-items">
+        <h3>Subscriber Count (x+)</h3>
+        <button class="button" id="woof">100000</button>
+        <button class="button" id="woof">500000</button>
+        <button class="button" id="woof">1000000</button>
+      </div>
+      <div class="srch">
+        <h4>Search Member By Name</h4><h5>(ex. Vox Akuma)</h5>
+        <form id="form">
+          <input src="text" id="search"/>
+          <input type="button" value="Enter"/>
+        </form>
+      </div>
+    </section>
+      
     <div class="profiles"></div>
     <script type="module" src="./js/main.js"></script>
   </body>

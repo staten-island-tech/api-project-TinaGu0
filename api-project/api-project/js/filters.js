@@ -5,7 +5,7 @@ const DOMSelectors = {
     woof: document.querySelectorAll("#woof"),
     everybody: document.querySelectorAll("#everybody"),
     search: document.getElementById("search"),
-    form: document.querySelectorAll(`#form`),
+    form: document.querySelector(`#form`),
 };
 
 
@@ -56,9 +56,9 @@ async function getData(URL){
             event.preventDefault();
             remove();
             let search = DOMSelectors.search.value
-            console.log(search);
             let arr2 = data.pageProps.allLivers.filter((pp)=> pp.enName === search)
             cards(arr2);
+            clearValues()
 
           });
 
@@ -77,5 +77,8 @@ async function getData(URL){
 };
 
 
+function clearValues() {
+    DOMSelectors.form.value=("");
+};
 
  export {DOMSelectors};

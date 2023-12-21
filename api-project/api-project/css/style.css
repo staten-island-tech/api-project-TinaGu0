@@ -78,8 +78,9 @@ body {
     display: flexbox;
     background-color: var(--secondary);
     box-shadow: 0 10px 10px #fff;
-    margin-top: 5%;
-    margin-right: 5%;
+    margin-right: 3.5%;
+    margin-top: 1%;
+    margin-bottom: 1.5%;
   }
 
   .img {
@@ -88,9 +89,8 @@ body {
 
   .profiles {
     display: flex;
-    width: 117%;
+    width: 100%;
     flex-flow: row wrap;
-    padding-top: 5%;
   }
 
 .profile:hover {
@@ -100,4 +100,12 @@ body {
 
 .srch {
     margin-left: 83%;
+}
+
+.section1 {
+    display: block;
+    background-image: URL('https://th.bing.com/th/id/OIP.vr_QeFYmCeW_I7XC5krAWwAAAA?rs=1&pid=ImgDetMain');
+    height: 10vw;
+    width: auto;
+    animation-play-state: paused;
 }
