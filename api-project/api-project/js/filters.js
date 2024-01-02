@@ -26,7 +26,7 @@ async function getData(URL){
                     <h2>${livers.enName}</h2>    
                     <h3>${livers.name}</h3>
                     <h3>Subscribers: ${livers.subscriberCount}</h3>
-                    <img src="${link}${livers.images.head.url}" class="img"/>
+                        <img src="${link}${livers.images.head.url}" class="img" alt="${livers.enName}"/>
                     <h3>${livers.profile.affiliation}</h3>
                 </div>
         `
