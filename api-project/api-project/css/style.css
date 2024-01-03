@@ -92,8 +92,6 @@ body {
     margin-right: 3.5%;
     margin-top: 1%;
     margin-bottom: 1.5%;
-    animation: beeg 5s;
-    animation-play-state: paused;
   }
 
   .img {
@@ -107,7 +105,8 @@ body {
   }
 
 .profile:hover {
-    animation-play-state: running;
+    scale: 1.1;
+    transition: .5s;
 }
 
 .srch {
@@ -132,14 +131,4 @@ body {
 
 body {
     background-color: var(--quartrary);
-}
-
-@keyframes beeg {
-    0% {
-        transform: scale(1);
-    }
-    100% {
-        transform: scale(5);
-    }
-
 }
