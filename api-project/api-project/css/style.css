@@ -57,10 +57,13 @@ body {
     --yellow: #fbf2c8;
     --black: #000;
     --cyan: #0c262c;
+    --pomu: https://vtubernewsdrop.com/content/images/2023/01/pomu-rainpuff-3d-nijisanji-waving.jpg;
+    --brown: #B9B9B9;
 
     --primary: var(--beige);
     --secondary: var(--white);
     --tertiary: var(--black);
+    --quartrary: var(--brown);
 
 }
 
@@ -68,12 +71,14 @@ body {
     --primary: var(--beige);
     --secondary: var(--white);
     --tertiary: var(--black);
+    --quartrary: var(--brown);
 }
 
 .imPomu {
     --primary: var(--teal);
     --secondary: var(--yellow);
     --tertiary: var(--cyan);
+    --quartrary: var(--yellow);
 }
 
 .profile {
@@ -87,6 +92,8 @@ body {
     margin-right: 3.5%;
     margin-top: 1%;
     margin-bottom: 1.5%;
+    animation: beeg 5s;
+    animation-play-state: paused;
   }
 
   .img {
@@ -100,8 +107,7 @@ body {
   }
 
 .profile:hover {
-    scale: 1.2;
-    transition: 0.3s;
+    animation-play-state: running;
 }
 
 .srch {
@@ -110,8 +116,30 @@ body {
 
 .section1 {
     display: block;
-    background-image: URL('https://i.pinimg.com/originals/70/f3/21/70f3219181fdef81c5001d514aaed186.jpg');
     height: 15vw;
     width: 100%;
-    animation-play-state: paused;
+}
+
+.teehee {
+    background: var(--primary);
+    width: 90%;
+    margin-left: 3%;
+    padding-right: 2vw;
+    padding-left: 2vw;
+    margin-bottom: 2%;
+    padding-bottom: 2vw;
+}
+
+body {
+    background-color: var(--quartrary);
+}
+
+@keyframes beeg {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(5);
+    }
+
 }
