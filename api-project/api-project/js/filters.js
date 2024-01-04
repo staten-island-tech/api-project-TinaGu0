@@ -6,6 +6,7 @@ const DOMSelectors = {
     everybody: document.querySelectorAll("#everybody"),
     search: document.getElementById("search"),
     form: document.querySelector(`#form`),
+    showMore: document.querySelectorAll("#showMore"),
 };
 
 
@@ -26,8 +27,9 @@ async function getData(URL){
                     <h2>${livers.enName}</h2>    
                     <h3>${livers.name}</h3>
                     <h3>Subscribers: ${livers.subscriberCount}</h3>
-                        <img src="${link}${livers.images.head.url}" class="img" alt="${livers.enName}"/>
+                        <img src="${link}${livers.images.head.url}" class="img" alt="Picture of ${livers.enName}"/>
                     <h3>${livers.profile.affiliation}</h3>
+                    <button class="button3" id="showMore">${livers.name}</button>
                 </div>
         `
         ))};
@@ -58,7 +60,6 @@ async function getData(URL){
             let search = DOMSelectors.search.value
             let arr2 = data.pageProps.allLivers.filter((pp)=> pp.enName === search)
             cards(arr2);
-            clearValues()
 
           });
 
@@ -70,15 +71,21 @@ async function getData(URL){
 
  getData(URL); 
 
+ function expand(){
+    const showMore = document.querySelectorAll("#showMore")
+    showMore.forEach(function(button) {
+        button.addEventListener("click", function() {
+            console.log("hello");
+        })
+    })
+};
+
+expand()
 
  function remove() {
     const div = document.querySelectorAll(".profile");
     div.forEach((bye)=> bye.remove());
 };
 
-
-function clearValues() {
-    DOMSelectors.form.value=("");
-};
 
  export {DOMSelectors};

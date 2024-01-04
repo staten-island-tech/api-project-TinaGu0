@@ -28,7 +28,7 @@ body {
     background-color: var(--secondary);
 }
 
-.button {
+.button, .button2 {
     height: 30px;
     width: 100px;
     border-radius: 30px;
@@ -36,19 +36,15 @@ body {
     color: var(--tertiary);
 }
 
-.button:hover, .button2:hover {
+.button3 {
+    border-radius: 7px;
+    background-color: #FFFF;
+}
+
+.button:hover, .button2:hover, .button3:hover {
     background-color: var(--primary);
+    scale: 1.1;
   } 
-
-.button2 {
-    height: 30px;
-    width: 100px;
-    border-radius: 30px;
-    background-color: var(--secondary);
-    margin-left: 90%;
-    margin-bottom: 1%;
-    color: var(--tertiary);
-}
 
 :root {
     --beige: #ece6e3;
@@ -105,8 +101,7 @@ body {
   }
 
 .profile:hover {
-    scale: 1.1;
-    transition: .5s;
+    scale: 1;
 }
 
 .srch {
