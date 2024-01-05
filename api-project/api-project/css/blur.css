@@ -1,0 +1,11 @@
+.block { 
+    background-color: rgb(252, 248, 243);
+    padding: 100%;
+    display: inline;
+    padding-top: 2000vw;
+    filter: opacity(90%);
+}
+
+.singleCard{
+    background-color: #FFF;
+}

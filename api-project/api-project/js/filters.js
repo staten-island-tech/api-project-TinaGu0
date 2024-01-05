@@ -7,6 +7,7 @@ const DOMSelectors = {
     search: document.getElementById("search"),
     form: document.querySelector(`#form`),
     showMore: document.querySelectorAll("#showMore"),
+    blur: document.querySelector("#blur")
 };
 
 
@@ -63,6 +64,8 @@ async function getData(URL){
 
           });
 
+          moreInfo()
+
 
     } catch (error) {
         
@@ -71,21 +74,26 @@ async function getData(URL){
 
  getData(URL); 
 
- function expand(){
-    const showMore = document.querySelectorAll("#showMore")
-    showMore.forEach(function(button) {
+ function moreInfo() {
+    const moreInfo = document.querySelectorAll("#showMore");
+    moreInfo.forEach(function(button) {
         button.addEventListener("click", function() {
-            console.log("hello");
-        })
-    })
-};
+            if (DOMSelectors.blur.classList.contains("notBlur")) {
+                DOMSelectors.blur.classList.add("block");
+                DOMSelectors.blur.classList.remove("notBlur");
+            }   
+            else {}
+        });
 
-expand()
+        //make funtion to create a card from the thingy button content shit
+    });
+};
 
  function remove() {
     const div = document.querySelectorAll(".profile");
     div.forEach((bye)=> bye.remove());
 };
+
 
 
  export {DOMSelectors};
