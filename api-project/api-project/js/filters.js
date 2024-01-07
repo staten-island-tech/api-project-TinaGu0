@@ -1,15 +1,5 @@
-
-const DOMSelectors = {
-    profiles: document.querySelector(".profiles"),
-    meow: document.querySelectorAll("#meow"),
-    woof: document.querySelectorAll("#woof"),
-    everybody: document.querySelectorAll("#everybody"),
-    search: document.getElementById("search"),
-    form: document.querySelector(`#form`),
-    showMore: document.querySelectorAll("#showMore"),
-    blur: document.querySelector("#blur")
-};
-
+import {DOMSelectors} from "./dom"
+import {moreInfo} from "./extra"
 
 const URL = `https://corsproxy.io/?https://www.nijisanji.jp/_next/data/qn3MdhaKNyN63H2JwZiWb/ja/talents.json`;
 
@@ -35,65 +25,50 @@ async function getData(URL){
         `
         ))};
         cards(data.pageProps.allLivers);
-        
-        DOMSelectors.meow.forEach((btn)=> btn.addEventListener("click", function(){
-            let arrays = btn.textContent
-            let newArr = data.pageProps.allLivers.filter((pp)=> pp.profile.affiliation.includes(arrays))
-            remove();
-            cards(newArr);
-        }));
+            
+    DOMSelectors.meow.forEach((btn)=> btn.addEventListener("click", function(){
+        let arrays = btn.textContent
+        let newArr = data.pageProps.allLivers.filter((pp)=> pp.profile.affiliation.includes(arrays))
+        remove();
+        cards(newArr);
+        moreInfo();
+    }));
 
-        DOMSelectors.everybody.forEach((everybody)=> everybody.addEventListener("click", function() {
-            remove();
-            cards(data.pageProps.allLivers);
-        }));
+    DOMSelectors.everybody.forEach((everybody)=> everybody.addEventListener("click", function() {
+        remove();
+        cards(data.pageProps.allLivers);
+        moreInfo();
+    }));
 
-        DOMSelectors.woof.forEach((btn)=> btn.addEventListener("click", function(){
-            let subNumber = btn.textContent
-            let ochenDa = data.pageProps.allLivers.filter((pp)=> pp.subscriberCount > subNumber)
-            remove();
-            cards(ochenDa);
-        }));
+    DOMSelectors.woof.forEach((btn)=> btn.addEventListener("click", function(){
+        let subNumber = btn.textContent
+        let ochenDa = data.pageProps.allLivers.filter((pp)=> pp.subscriberCount > subNumber)
+        remove();
+        cards(ochenDa);
+        moreInfo();
+    }));
 
-        DOMSelectors.form.addEventListener("click", function (event) {
-            event.preventDefault();
-            remove();
-            let search = DOMSelectors.search.value
-            let arr2 = data.pageProps.allLivers.filter((pp)=> pp.enName === search)
-            cards(arr2);
+    DOMSelectors.form.addEventListener("click", function (event) {
+        event.preventDefault();
+        remove();
+        let search = DOMSelectors.search.value
+        let arr2 = data.pageProps.allLivers.filter((pp)=> pp.enName === search)
+        cards(arr2);
+        moreInfo();
 
-          });
+    });
 
-          moreInfo()
-
+    moreInfo()
 
     } catch (error) {
-        
+        console.log(error);
+        alert("Skill Issue LMAOOOOOO")
     }
 };
 
  getData(URL); 
 
- function moreInfo() {
-    const moreInfo = document.querySelectorAll("#showMore");
-    moreInfo.forEach(function(button) {
-        button.addEventListener("click", function() {
-            if (DOMSelectors.blur.classList.contains("notBlur")) {
-                DOMSelectors.blur.classList.add("block");
-                DOMSelectors.blur.classList.remove("notBlur");
-            }   
-            else {}
-        });
-
-        //make funtion to create a card from the thingy button content shit
-    });
-};
-
  function remove() {
     const div = document.querySelectorAll(".profile");
     div.forEach((bye)=> bye.remove());
 };
-
-
-
- export {DOMSelectors};
